@@ -433,7 +433,7 @@ async function confirmImport(){
     });
     persistCustomSaved(items);
   }catch(error){
-    if(msg)msg.textContent='瀏覽器無法寫入收藏，請確認未使用無痕模式或封鎖網站儲存空間。';
+    if(msg)msg.textContent='收藏寫入失敗：'+((error&&error.message)||'未知錯誤');
     if(button){button.disabled=false;button.textContent='完成定位並加入收藏'}
     return;
   }
